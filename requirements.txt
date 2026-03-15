@@ -4,5 +4,6 @@ sqlalchemy
 matplotlib
 seaborn
 requests
-folium
 plotly
+folium
+streamlit-folium
