@@ -19,7 +19,19 @@ st.set_page_config(page_title="Community Fever & Malaria Dashboard", layout="wid
 # ----------------------------
 # Connect to SQLite
 # ----------------------------
-engine = create_engine("sqlite:///../database/surveillance.db")
+import os
+
+# 1. Identify the current directory of app.py
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# 2. Construct the absolute path to the database
+# This goes up one level from 'dashboard' and then into 'database'
+db_path = os.path.join(current_dir, "..", "database", "surveillance.db")
+
+# 3. Create engine with the verified path
+# Note: sqlite:/// followed by the absolute path
+engine = create_engine(f"sqlite:///{db_path}")
+
 df = pd.read_sql("SELECT * FROM surveillance_reports", engine)
 df['report_date'] = pd.to_datetime(df['report_date'])
 df['week'] = df['report_date'].dt.isocalendar().week
