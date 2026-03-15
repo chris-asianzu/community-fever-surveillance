@@ -1,0 +1,8 @@
+streamlit
+pandas
+sqlalchemy
+matplotlib
+seaborn
+requests
+folium
+plotly

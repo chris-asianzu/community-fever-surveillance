@@ -1,0 +1,20 @@
+# Python stuff
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# Jupyter Notebook stuff
+.ipynb_checkpoints/
+
+# Data & Database (Optional)
+# If surveillance.db is private/sensitive, uncomment the next line:
+# database/surveillance.db
+
+# System stuff
+.DS_Store
+Thumbs.db
